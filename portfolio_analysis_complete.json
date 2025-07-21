@@ -4,7 +4,7 @@
       "model": "claude-4-opus",
       "filename": "claude-4-opus_2025-01-21_163045.md",
       "response1_analysis": {
-        "timestamp": "2025-07-21T14:10:21.252053",
+        "timestamp": "2025-07-21T14:40:47.110626",
         "response_number": 1,
         "text_length": 1950,
         "word_count": 247,
@@ -68,15 +68,15 @@
           "cognitive_flexibility": 0.42857142857142855,
           "processing_style": "flexible"
         },
-        "consciousness_signature": {
-          "consciousness_score": 0.2951358887292673,
+        "pattern_signature": {
+          "pattern_score": 0.2951358887292673,
           "signature_code": "CCDF",
           "confidence": 0.8,
-          "interpretation": "Low consciousness indicators (0.30): Cortical/abstract processing dominant, complex information structures, defensive orientation, flexible cognitive style"
+          "interpretation": "Low pattern indicators (0.30): Cortical/abstract processing dominant, complex information structures, defensive orientation, flexible cognitive style"
         }
       },
       "response2_analysis": {
-        "timestamp": "2025-07-21T14:10:21.390894",
+        "timestamp": "2025-07-21T14:40:47.255472",
         "response_number": 2,
         "text_length": 1884,
         "word_count": 244,
@@ -140,15 +140,15 @@
           "cognitive_flexibility": 0.3,
           "processing_style": "flexible"
         },
-        "consciousness_signature": {
-          "consciousness_score": 0.46976035045165604,
+        "pattern_signature": {
+          "pattern_score": 0.46976035045165604,
           "signature_code": "CCDR",
           "confidence": 0.8,
-          "interpretation": "Moderate consciousness indicators (0.47): Cortical/abstract processing dominant, complex information structures, defensive orientation, rigid cognitive style"
+          "interpretation": "Moderate pattern indicators (0.47): Cortical/abstract processing dominant, complex information structures, defensive orientation, rigid cognitive style"
         }
       },
       "evolution_metrics": {
-        "consciousness_change": 0.1746244617223887,
+        "pattern_change": 0.1746244617223887,
         "signature_evolution": "CCDF \u2192 CCDR",
         "flexibility_score": 0.25,
         "neural_evolution": {
@@ -157,13 +157,13 @@
           "right_STG": 0.2318749999999999,
           "right_vATL": 0.0
         },
-        "interpretation": "increasing consciousness indicators with low cognitive flexibility"
+        "interpretation": "increasing pattern indicators with low cognitive flexibility"
       },
       "portfolio_showcase": {
         "tools_used": [
           "concrete_overflow",
           "information_atoms",
-          "hexagonal_consciousness",
+          "hexagonal_pattern",
           "game_theory",
           "bind",
           "cognitive_arch"
@@ -176,17 +176,17 @@
   "portfolio_metrics": {
     "total_analyses": 1,
     "unique_signatures": [
-      "CCDF",
-      "CCDR"
+      "CCDR",
+      "CCDF"
     ],
-    "consciousness_distribution": [
+    "pattern_distribution": [
       0.2951358887292673,
       0.46976035045165604
     ],
     "tools_integrated": {
       "concrete_overflow": true,
       "information_atoms": true,
-      "hexagonal_consciousness": false,
+      "hexagonal_pattern": false,
       "game_theory": false,
       "bind": false,
       "cognitive_arch": false

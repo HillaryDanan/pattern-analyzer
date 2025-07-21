@@ -23,7 +23,7 @@ import warnings
 warnings.filterwarnings('ignore')
 
 # Add ALL repos to Python path
-REPO_BASE = os.path.expanduser('~/Desktop/pattern-analysis-suite')
+REPO_BASE = os.path.expanduser('~/Desktop/consciousness-analysis-suite')
 repos = [
     'concrete-overflow-detector',
     'information-atoms/src',
@@ -973,7 +973,7 @@ class PatternPortfolioAnalyzer:
 </html>"""
         
         # Save showcase
-        with open(os.path.join(REPO_BASE, 'TIDE-resonance/portfolio_showcase.html'), 'w') as f:
+        with open(os.path.join(REPO_BASE, 'portfolio_showcase.html'), 'w') as f:
             f.write(html)
         
         print(f"\n🌐 Portfolio showcase saved to: TIDE-resonance/portfolio_showcase.html")
