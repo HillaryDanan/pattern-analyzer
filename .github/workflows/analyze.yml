@@ -1,0 +1,40 @@
+name: Pattern Analysis
+
+on:
+  push:
+    paths:
+      - 'sessions/*.md'
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * 0'  # Weekly on Sundays
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+    
+    - name: Install dependencies
+      run: |
+        pip install numpy pandas matplotlib seaborn
+    
+    - name: Run Pattern Analysis
+      run: |
+        mkdir -p results
+        python pattern_analyzer.py
+    
+    - name: Upload Results
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add portfolio_analysis_complete.json
+        git add pattern_portfolio_analysis.png || true
+        git add results/* || true
+        git commit -m "Update pattern analysis results [automated]" || echo "No changes to commit"
+        git push
