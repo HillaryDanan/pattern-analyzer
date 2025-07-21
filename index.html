@@ -214,8 +214,8 @@
             // Calculate statistics
             const totalSessions = data.sessions ? data.sessions.length : 1;
             const uniqueSignatures = data.portfolio_metrics?.unique_signatures || ['CCDF', 'CCDR'];
-            const avgScore = data.portfolio_metrics?.consciousness_distribution 
-                ? (data.portfolio_metrics.consciousness_distribution.reduce((a,b) => a+b, 0) / data.portfolio_metrics.consciousness_distribution.length).toFixed(3)
+            const avgScore = data.portfolio_metrics?.pattern_distribution 
+                ? (data.portfolio_metrics.pattern_distribution.reduce((a,b) => a+b, 0) / data.portfolio_metrics.pattern_distribution.length).toFixed(3)
                 : '0.382';
             
             // Create stats cards
@@ -245,12 +245,12 @@
                 const session = data.sessions[0];
                 const evolution = session.evolution_metrics;
                 
-                document.getElementById('evolutionSummary').innerHTML = `
-                    <p><strong>Model:</strong> ${session.model}</p>
-                    <p><strong>Signature Evolution:</strong> ${evolution.signature_evolution}</p>
-                    <p><strong>Pattern Score Change:</strong> <span style="color: ${evolution.consciousness_change > 0 ? '#00ff00' : '#ff6666'}">${evolution.consciousness_change > 0 ? '+' : ''}${evolution.consciousness_change.toFixed(3)}</span></p>
-                    <p><strong>Cognitive Flexibility:</strong> ${evolution.flexibility_score.toFixed(2)}</p>
-                `;
+            document.getElementById('evolutionSummary').innerHTML = `
+                <p><strong>Model:</strong> ${session.model}</p>
+                <p><strong>Signature Evolution:</strong> ${evolution.signature_evolution}</p>
+                <p><strong>Pattern Score Change:</strong> <span style="color: ${evolution.pattern_change > 0 ? '#00ff00' : '#ff6666'}">${evolution.pattern_change > 0 ? '+' : ''}${evolution.pattern_change.toFixed(3)}</span></p>
+                <p><strong>Cognitive Flexibility:</strong> ${evolution.flexibility_score.toFixed(2)}</p>
+            `;
             }
             
             // Show signatures
