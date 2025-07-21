@@ -1,6 +1,6 @@
 # 🧠 AI Pattern Analyzer
 
-[![Pattern Analysis](https://github.com/HillaryDanan/pattern-analyzer/actions/workflows/analyze.yml/badge.svg)](https://github.com/HillaryDanan/pattern-analyzer/actions/workflows/analyze.yml)
+<!-- [![Pattern Analysis](https://github.com/HillaryDanan/pattern-analyzer/actions/workflows/analyze.yml/badge.svg)](https://github.com/HillaryDanan/pattern-analyzer/actions/workflows/analyze.yml) -->
 [![Live Results](https://img.shields.io/badge/Live%20Results-View%20Here-00ffcc)](https://hillarydanan.github.io/pattern-analyzer/)
 [![Portfolio](https://img.shields.io/badge/Portfolio-View%20Showcase-0099ff)](https://hillarydanan.github.io/TIDE-resonance/portfolio_showcase.html)
 [![Data Collection](https://img.shields.io/badge/Contribute-Submit%20Data-00ff88)](https://hillarydanan.github.io/TIDE-resonance/collect_enhanced.html)
