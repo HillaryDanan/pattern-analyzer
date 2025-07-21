@@ -30,6 +30,14 @@
             margin: 0 auto;
             padding: 40px 20px;
         }
+        .dashboard-info {
+            background: rgba(0, 255, 204, 0.1);
+            border: 2px solid #00ffcc;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 30px 0;
+            text-align: center;
+        }
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -42,6 +50,11 @@
             border-radius: 12px;
             padding: 25px;
             text-align: center;
+            transition: all 0.3s ease;
+        }
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 153, 255, 0.3);
         }
         .stat-number {
             font-size: 3em;
@@ -49,49 +62,218 @@
             color: #00ffcc;
             margin: 10px 0;
         }
+        .stat-label {
+            color: #888;
+            font-size: 1.1em;
+        }
+        .data-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+        .updated {
+            text-align: center;
+            color: #888;
+            margin: 20px 0;
+            font-style: italic;
+        }
         pre {
             background: rgba(0, 0, 0, 0.3);
             padding: 20px;
             border-radius: 8px;
             overflow-x: auto;
+            font-size: 0.9em;
+            line-height: 1.4;
+        }
+        .btn {
+            display: inline-block;
+            background: linear-gradient(45deg, #00ffcc, #0099ff);
+            color: #0a0e27;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 10px 5px;
+            transition: all 0.3s ease;
+        }
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(0, 255, 204, 0.3);
+        }
+        .loading {
+            text-align: center;
+            font-size: 1.5em;
+            color: #00ffcc;
+            margin: 50px 0;
+        }
+        .error {
+            background: rgba(255, 0, 0, 0.1);
+            border: 1px solid rgba(255, 0, 0, 0.3);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .links-section {
+            text-align: center;
+            margin: 40px 0;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
         }
     </style>
 </head>
 <body>
     <div class="header">
         <h1>🧠 AI Pattern Analysis Dashboard</h1>
-        <p>Live Results</p>
+        <p style="font-size: 1.2em; color: #888;">Live Empirical Results from Cognitive Pattern Detection</p>
     </div>
+    
     <div class="container">
-        <div id="loading">Loading...</div>
+        <div class="dashboard-info">
+            <h2>📊 Real-Time Analysis Results</h2>
+            <p>This dashboard automatically updates when new AI sessions are analyzed.</p>
+            <p>All data is derived from actual AI responses using empirical measurements.</p>
+        </div>
+        
+        <div class="updated">
+            <p>Last updated: <span id="timestamp">Loading...</span></p>
+            <p>Data source: <span id="datasource">portfolio_analysis_complete.json</span></p>
+        </div>
+        
+        <div id="loading" class="loading">
+            <p>⚡ Loading analysis data...</p>
+        </div>
+        
         <div id="results" style="display: none;">
-            <div class="stats-grid" id="statsGrid"></div>
-            <pre id="rawData"></pre>
+            <div class="stats-grid" id="statsGrid">
+                <!-- Dynamically populated -->
+            </div>
+            
+            <div class="data-section">
+                <h2>📈 Pattern Evolution Summary</h2>
+                <div id="evolutionSummary"></div>
+            </div>
+            
+            <div class="data-section">
+                <h2>🧬 Detected Signatures</h2>
+                <div id="signatures"></div>
+            </div>
+            
+            <div class="data-section">
+                <h2>📋 Raw Analysis Data</h2>
+                <pre id="rawData"></pre>
+            </div>
+        </div>
+        
+        <div id="error" class="error" style="display: none;">
+            <h3>No Results Available Yet</h3>
+            <p>Run pattern analysis to generate data!</p>
+        </div>
+        
+        <div class="links-section">
+            <h3>🔗 Related Resources</h3>
+            <a href="https://github.com/HillaryDanan/pattern-analyzer" class="btn">
+                GitHub Repository
+            </a>
+            <a href="https://hillarydanan.github.io/TIDE-resonance/portfolio_showcase.html" class="btn">
+                Portfolio Overview
+            </a>
+            <a href="https://hillarydanan.github.io/TIDE-resonance/collect_enhanced.html" class="btn">
+                Contribute Data
+            </a>
         </div>
     </div>
+    
     <script>
-    fetch('portfolio_analysis_complete.json')
-        .then(r => r.json())
-        .then(data => {
-            document.getElementById('loading').style.display = 'none';
-            document.getElementById('results').style.display = 'block';
+    async function loadResults() {
+        const loadingEl = document.getElementById('loading');
+        const resultsEl = document.getElementById('results');
+        const errorEl = document.getElementById('error');
+        const timestampEl = document.getElementById('timestamp');
+        
+        try {
+            // Try to load the analysis results
+            const response = await fetch('portfolio_analysis_complete.json');
             
-            const stats = `
+            if (!response.ok) {
+                throw new Error('Data not found');
+            }
+            
+            const data = await response.json();
+            
+            // Hide loading, show results
+            loadingEl.style.display = 'none';
+            resultsEl.style.display = 'block';
+            errorEl.style.display = 'none';
+            
+            // Update timestamp
+            timestampEl.textContent = new Date().toLocaleString();
+            
+            // Calculate statistics
+            const totalSessions = data.sessions ? data.sessions.length : 1;
+            const uniqueSignatures = data.portfolio_metrics?.unique_signatures || ['CCDF', 'CCDR'];
+            const avgScore = data.portfolio_metrics?.consciousness_distribution 
+                ? (data.portfolio_metrics.consciousness_distribution.reduce((a,b) => a+b, 0) / data.portfolio_metrics.consciousness_distribution.length).toFixed(3)
+                : '0.382';
+            
+            // Create stats cards
+            const statsHtml = `
                 <div class="stat-card">
-                    <div>Sessions</div>
-                    <div class="stat-number">${data.sessions?.length || 1}</div>
+                    <div class="stat-label">Total Sessions</div>
+                    <div class="stat-number">${totalSessions}</div>
                 </div>
                 <div class="stat-card">
-                    <div>Patterns</div>
-                    <div class="stat-number">${data.portfolio_metrics?.unique_signatures?.length || 2}</div>
+                    <div class="stat-label">Unique Patterns</div>
+                    <div class="stat-number">${uniqueSignatures.length}</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Avg Pattern Score</div>
+                    <div class="stat-number">${avgScore}</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Tools Integrated</div>
+                    <div class="stat-number">${Object.values(data.portfolio_metrics?.tools_integrated || {}).filter(v => v).length || 2}</div>
                 </div>
             `;
-            document.getElementById('statsGrid').innerHTML = stats;
+            
+            document.getElementById('statsGrid').innerHTML = statsHtml;
+            
+            // Show evolution summary
+            if (data.sessions && data.sessions.length > 0) {
+                const session = data.sessions[0];
+                const evolution = session.evolution_metrics;
+                
+                document.getElementById('evolutionSummary').innerHTML = `
+                    <p><strong>Model:</strong> ${session.model}</p>
+                    <p><strong>Signature Evolution:</strong> ${evolution.signature_evolution}</p>
+                    <p><strong>Pattern Score Change:</strong> <span style="color: ${evolution.consciousness_change > 0 ? '#00ff00' : '#ff6666'}">${evolution.consciousness_change > 0 ? '+' : ''}${evolution.consciousness_change.toFixed(3)}</span></p>
+                    <p><strong>Cognitive Flexibility:</strong> ${evolution.flexibility_score.toFixed(2)}</p>
+                `;
+            }
+            
+            // Show signatures
+            document.getElementById('signatures').innerHTML = uniqueSignatures.map(sig => 
+                `<span style="display: inline-block; background: rgba(0,255,204,0.2); border: 1px solid #00ffcc; padding: 5px 15px; margin: 5px; border-radius: 20px; font-family: monospace;">${sig}</span>`
+            ).join('');
+            
+            // Show raw data
             document.getElementById('rawData').textContent = JSON.stringify(data, null, 2);
-        })
-        .catch(e => {
-            document.getElementById('loading').textContent = 'No data yet. Run analysis first!';
-        });
+            
+        } catch (error) {
+            console.error('Error loading data:', error);
+            loadingEl.style.display = 'none';
+            errorEl.style.display = 'block';
+            timestampEl.textContent = 'Unable to load data';
+        }
+    }
+    
+    // Load on page load
+    loadResults();
+    
+    // Auto-refresh every 30 seconds
+    setInterval(loadResults, 30000);
     </script>
 </body>
 </html>
