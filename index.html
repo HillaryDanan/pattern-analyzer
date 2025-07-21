@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Live AI Pattern Analysis</title>
+    <style>
+        body { background: #0a0e27; color: #fff; font-family: Arial, sans-serif; }
+        h1 { color: #00ffcc; text-align: center; }
+        .results { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .updated { text-align: center; color: #888; margin: 20px 0; }
+        pre { background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px; overflow-x: auto; }
+    </style>
+</head>
+<body>
+    <h1>🧠 Live AI Pattern Analysis Results</h1>
+    <div class="results">
+        <div class="updated">Last updated: <span id="timestamp"></span></div>
+        <div id="analysis-results"></div>
+    </div>
+    
+    <script>
+    // Load latest results
+    fetch('results/latest_analysis.json')
+        .then(r => r.json())
+        .then(data => {
+            document.getElementById('timestamp').textContent = new Date().toLocaleString();
+            document.getElementById('analysis-results').innerHTML = `
+                <h2>Sessions Analyzed: ${data.total_sessions}</h2>
+                <h2>Unique Patterns: ${data.unique_patterns}</h2>
+                <pre>${JSON.stringify(data, null, 2)}</pre>
+            `;
+        })
+        .catch(e => {
+            document.getElementById('analysis-results').innerHTML = '<p>No results yet. Upload session files to see analysis!</p>';
+        });
+    </script>
+</body>
+</html>

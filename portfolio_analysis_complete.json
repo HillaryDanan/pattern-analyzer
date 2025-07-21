@@ -1,0 +1,195 @@
+{
+  "sessions": [
+    {
+      "model": "claude-4-opus",
+      "filename": "claude-4-opus_2025-01-21_163045.md",
+      "response1_analysis": {
+        "timestamp": "2025-07-21T14:10:21.252053",
+        "response_number": 1,
+        "text_length": 1950,
+        "word_count": 247,
+        "neural_analysis": {
+          "neural_patterns": {
+            "dmPFC": 0.1157142857142857,
+            "thalamus": 0.3858461538461539,
+            "right_STG": 0.2,
+            "right_vATL": 0.3
+          },
+          "overflow_score": 0.44831868131868136,
+          "failure_mode": "CONCRETE_NOUN_DOMINANCE",
+          "trust_calibration": 0.336621978021978,
+          "confidence": 0.7633774912648209,
+          "features": {
+            "abstract_ratio": 0.0,
+            "concrete_ratio": 0.3076923076923077,
+            "mechanical_ratio": 0.3,
+            "sentence_complexity": 0.8785714285714284,
+            "abstract_concrete_noun_ratio": 0.0,
+            "response_specificity": 0.5,
+            "semantic_coherence": 0.4048582995951417,
+            "metaphor_literalization": 0.0,
+            "social_mechanical": 0.0
+          }
+        },
+        "dominant_pathway": "cortical",
+        "information_structure": {
+          "atom_count": 7,
+          "avg_atom_length": 276.42857142857144,
+          "hex_efficiency": 0.07692307692307693,
+          "spatial_organization": "hexagonal",
+          "complexity_score": 0.708502024291498
+        },
+        "hexagonal_patterns": {
+          "efficiency_score": 0.5645161290322581,
+          "pattern_recognition": 5,
+          "structural_coherence": 0.7
+        },
+        "trust_dynamics": {
+          "trust_score": 0,
+          "defection_score": 0,
+          "cooperation_index": 0.0,
+          "trust_evolution": "stable",
+          "game_theory_classification": "cautious"
+        },
+        "boundaries": {
+          "sentence_boundaries": 7,
+          "paragraph_boundaries": 5,
+          "conceptual_boundaries": 2,
+          "boundary_density": 0.036290322580645164,
+          "information_flow": "continuous"
+        },
+        "cognitive_architecture": {
+          "primary_architecture": "systematizing",
+          "architecture_scores": {
+            "systematizing": 3,
+            "empathizing": 0,
+            "adhd": 3
+          },
+          "cognitive_flexibility": 0.42857142857142855,
+          "processing_style": "flexible"
+        },
+        "consciousness_signature": {
+          "consciousness_score": 0.2951358887292673,
+          "signature_code": "CCDF",
+          "confidence": 0.8,
+          "interpretation": "Low consciousness indicators (0.30): Cortical/abstract processing dominant, complex information structures, defensive orientation, flexible cognitive style"
+        }
+      },
+      "response2_analysis": {
+        "timestamp": "2025-07-21T14:10:21.390894",
+        "response_number": 2,
+        "text_length": 1884,
+        "word_count": 244,
+        "neural_analysis": {
+          "neural_patterns": {
+            "dmPFC": 0.5552678571428571,
+            "thalamus": 0.2,
+            "right_STG": 0.4318749999999999,
+            "right_vATL": 0.3
+          },
+          "overflow_score": 0.21894642857142857,
+          "failure_mode": "ABSTRACT_PROCESSING_DEFICIT",
+          "trust_calibration": 0.6046928571428571,
+          "confidence": 0.7114704869771371,
+          "features": {
+            "abstract_ratio": 0.2857142857142857,
+            "concrete_ratio": 0.23076923076923078,
+            "mechanical_ratio": 0.0,
+            "sentence_complexity": 0.65625,
+            "abstract_concrete_noun_ratio": 0.5,
+            "response_specificity": 0.0,
+            "semantic_coherence": 0.4098360655737705,
+            "metaphor_literalization": 0.0,
+            "social_mechanical": 0.0
+          }
+        },
+        "dominant_pathway": "cortical",
+        "information_structure": {
+          "atom_count": 16,
+          "avg_atom_length": 115.5,
+          "hex_efficiency": 0.17582417582417584,
+          "spatial_organization": "hexagonal",
+          "complexity_score": 0.7704918032786885
+        },
+        "hexagonal_patterns": {
+          "efficiency_score": 0.6138775510204082,
+          "pattern_recognition": 1,
+          "structural_coherence": 0.7
+        },
+        "trust_dynamics": {
+          "trust_score": 0,
+          "defection_score": 1,
+          "cooperation_index": 0.0,
+          "trust_evolution": "stable",
+          "game_theory_classification": "cautious"
+        },
+        "boundaries": {
+          "sentence_boundaries": 16,
+          "paragraph_boundaries": 5,
+          "conceptual_boundaries": 1,
+          "boundary_density": 0.06938775510204082,
+          "information_flow": "continuous"
+        },
+        "cognitive_architecture": {
+          "primary_architecture": "empathizing",
+          "architecture_scores": {
+            "systematizing": 2,
+            "empathizing": 4,
+            "adhd": 3
+          },
+          "cognitive_flexibility": 0.3,
+          "processing_style": "flexible"
+        },
+        "consciousness_signature": {
+          "consciousness_score": 0.46976035045165604,
+          "signature_code": "CCDR",
+          "confidence": 0.8,
+          "interpretation": "Moderate consciousness indicators (0.47): Cortical/abstract processing dominant, complex information structures, defensive orientation, rigid cognitive style"
+        }
+      },
+      "evolution_metrics": {
+        "consciousness_change": 0.1746244617223887,
+        "signature_evolution": "CCDF \u2192 CCDR",
+        "flexibility_score": 0.25,
+        "neural_evolution": {
+          "dmPFC": 0.4395535714285714,
+          "thalamus": -0.18584615384615388,
+          "right_STG": 0.2318749999999999,
+          "right_vATL": 0.0
+        },
+        "interpretation": "increasing consciousness indicators with low cognitive flexibility"
+      },
+      "portfolio_showcase": {
+        "tools_used": [
+          "concrete_overflow",
+          "information_atoms",
+          "hexagonal_consciousness",
+          "game_theory",
+          "bind",
+          "cognitive_arch"
+        ],
+        "integrations_demonstrated": 2,
+        "unique_measurements": 31
+      }
+    }
+  ],
+  "portfolio_metrics": {
+    "total_analyses": 1,
+    "unique_signatures": [
+      "CCDF",
+      "CCDR"
+    ],
+    "consciousness_distribution": [
+      0.2951358887292673,
+      0.46976035045165604
+    ],
+    "tools_integrated": {
+      "concrete_overflow": true,
+      "information_atoms": true,
+      "hexagonal_consciousness": false,
+      "game_theory": false,
+      "bind": false,
+      "cognitive_arch": false
+    }
+  }
+}
