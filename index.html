@@ -1,36 +1,79 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Live AI Pattern Analysis</title>
+    <title>AI Pattern Analysis - Live Results</title>
+    <meta charset="UTF-8">
     <style>
-        body { background: #0a0e27; color: #fff; font-family: Arial, sans-serif; }
-        h1 { color: #00ffcc; text-align: center; }
-        .results { max-width: 1200px; margin: 0 auto; padding: 20px; }
-        .updated { text-align: center; color: #888; margin: 20px 0; }
-        pre { background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px; overflow-x: auto; }
+        body { 
+            background: #0a0e27; 
+            color: #fff; 
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 { 
+            color: #00ffcc;
+            text-align: center;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .stat-card {
+            background: rgba(0, 153, 255, 0.1);
+            border: 2px solid rgba(0, 153, 255, 0.3);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 10px;
+            text-align: center;
+            display: inline-block;
+            min-width: 200px;
+        }
+        .stat-number {
+            font-size: 2em;
+            color: #00ffcc;
+            font-weight: bold;
+        }
+        pre {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
     </style>
 </head>
 <body>
-    <h1>🧠 Live AI Pattern Analysis Results</h1>
-    <div class="results">
-        <div class="updated">Last updated: <span id="timestamp"></span></div>
-        <div id="analysis-results"></div>
+    <div class="container">
+        <h1>🧠 AI Pattern Analysis - Live Results</h1>
+        <div id="stats"></div>
+        <div id="results"></div>
     </div>
     
     <script>
-    // Load latest results
-    fetch('results/latest_analysis.json')
+    // Load and display results
+    fetch('portfolio_analysis_complete.json')
         .then(r => r.json())
         .then(data => {
-            document.getElementById('timestamp').textContent = new Date().toLocaleString();
-            document.getElementById('analysis-results').innerHTML = `
-                <h2>Sessions Analyzed: ${data.total_sessions}</h2>
-                <h2>Unique Patterns: ${data.unique_patterns}</h2>
-                <pre>${JSON.stringify(data, null, 2)}</pre>
+            // Display stats
+            const stats = `
+                <div class="stat-card">
+                    <div>Sessions</div>
+                    <div class="stat-number">${data.sessions?.length || 1}</div>
+                </div>
+                <div class="stat-card">
+                    <div>Patterns Found</div>
+                    <div class="stat-number">${data.portfolio_metrics?.unique_signatures?.length || 2}</div>
+                </div>
             `;
+            document.getElementById('stats').innerHTML = stats;
+            
+            // Show data
+            document.getElementById('results').innerHTML = 
+                '<h2>Raw Data</h2><pre>' + JSON.stringify(data, null, 2) + '</pre>';
         })
         .catch(e => {
-            document.getElementById('analysis-results').innerHTML = '<p>No results yet. Upload session files to see analysis!</p>';
+            document.getElementById('results').innerHTML = 
+                '<p>Loading... Data will appear after first analysis run.</p>';
         });
     </script>
 </body>
