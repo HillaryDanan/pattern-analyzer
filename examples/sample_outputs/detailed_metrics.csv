@@ -1,0 +1,22 @@
+DISCLAIMER,DEMO DATA,SAMPLE ONLY,1.00,All values are fictional examples
+Metric,Value,Category,Confidence,Notes
+Complexity Score,0.847,Global,0.95,Higher than 84.7% of analyzed models
+Pattern Richness,0.923,Global,0.98,Exceptional diversity detected
+Information Density,0.756,Global,0.92,Well-distributed information
+Fractal Dimension,1.730,Mathematical,0.89,Self-similar across scales
+Emergence Score,0.890,Behavioral,0.87,Strong emergent properties
+Resonance Strength,0.920,Patterns,0.96,Primary pattern RP001
+Clustering Coefficient,0.673,Network,0.94,High local connectivity
+Entropy,4.720,Statistical,0.99,Balanced information distribution
+Spectral Gap,0.450,Mathematical,0.91,Clear cluster boundaries
+Attention Focus,0.827,Layers,0.93,Concentrated in layers 7-11
+Cross-Layer Coupling,0.534,Interactions,0.88,Moderate inter-layer communication
+Token Interaction Density,0.730,Tokens,0.95,Rich token relationships
+Phase Coherence,0.812,Dynamics,0.85,Synchronized processing
+Modularity,0.445,Structure,0.90,Distinct functional modules
+Information Flow,0.789,Dynamics,0.86,Efficient information transfer
+Stability Index,0.923,Robustness,0.97,Highly stable architecture
+Adaptation Capacity,0.678,Flexibility,0.82,Good learning potential
+Memory Efficiency,0.856,Performance,0.94,Optimized memory usage
+Processing Speed,0.901,Performance,0.96,Fast inference capability
+Energy Efficiency,0.734,Performance,0.88,Reasonable power consumption

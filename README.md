@@ -163,6 +163,19 @@ Standalone outputs:
 - `pattern_portfolio_analysis.png` - Visualization charts
 - `index.html` - Live results dashboard
 
+## 🎬 Live Demo
+
+See the integrated pipeline in action:
+
+```bash
+cd examples
+python integrated_pipeline_demo.py
+```
+
+**Note**: The demo uses sample data to illustrate the pipeline structure and output format. For real analysis on actual AI models, the tools use genuine mathematical analysis on real data.
+
+View sample outputs in `examples/sample_outputs/` to understand what the analysis produces.
+
 ## 🔗 Part of the AI Architecture Research Suite
 
 This analyzer works with:

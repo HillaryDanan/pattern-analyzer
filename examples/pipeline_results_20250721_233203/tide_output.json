@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "model": "gpt-4",
+    "timestamp": "20250721_233203",
+    "version": "1.0.0"
+  },
+  "token_analysis": {
+    "total_tokens": 50000,
+    "unique_patterns": 237,
+    "resonance_events": 42
+  },
+  "interaction_matrix": {
+    "dimensions": [
+      512,
+      512
+    ],
+    "density": 0.73,
+    "clusters": 8
+  },
+  "resonance_patterns": [
+    {
+      "id": "RP001",
+      "frequency": 0.87,
+      "amplitude": 0.92,
+      "location": "attention_layer_11"
+    },
+    {
+      "id": "RP002",
+      "frequency": 0.45,
+      "amplitude": 0.78,
+      "location": "attention_layer_7"
+    }
+  ],
+  "raw_data": {
+    "attention_weights": "[[0.23, 0.45, ...], ...]",
+    "token_embeddings": "[[0.12, -0.34, ...], ...]"
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "DISCLAIMER": "SAMPLE DATA FOR DEMONSTRATION ONLY - NOT FROM REAL ANALYSIS",
+  "metadata": {
+    "model": "gpt-4",
+    "timestamp": "20240121_143022",
+    "version": "1.0.0",
+    "analysis_duration": "3.47s",
+    "data_type": "SIMULATED_DEMO"
+  },
+  "token_analysis": {
+    "total_tokens": 50000,
+    "unique_patterns": 237,
+    "resonance_events": 42,
+    "interaction_density": 0.73,
+    "emergence_score": 0.89
+  },
+  "interaction_matrix": {
+    "dimensions": [512, 512],
+    "density": 0.73,
+    "clusters": 8,
+    "strongest_connections": [
+      {"from": 127, "to": 384, "weight": 0.97},
+      {"from": 256, "to": 511, "weight": 0.94},
+      {"from": 64, "to": 192, "weight": 0.91}
+    ]
+  },
+  "resonance_patterns": [
+    {
+      "id": "RP001",
+      "type": "harmonic",
+      "frequency": 0.87,
+      "amplitude": 0.92,
+      "location": "attention_layer_11",
+      "tokens_affected": 1247,
+      "significance": "primary"
+    },
+    {
+      "id": "RP002",
+      "type": "subharmonic",
+      "frequency": 0.45,
+      "amplitude": 0.78,
+      "location": "attention_layer_7",
+      "tokens_affected": 892,
+      "significance": "secondary"
+    },
+    {
+      "id": "RP003",
+      "type": "emergent",
+      "frequency": 0.33,
+      "amplitude": 0.65,
+      "location": "cross_layer_7_11",
+      "tokens_affected": 534,
+      "significance": "tertiary"
+    }
+  ],
+  "layer_analysis": {
+    "attention_layers": {
+      "layer_11": {
+        "activity": 0.92,
+        "pattern_density": 0.87,
+        "resonance_strength": 0.94
+      },
+      "layer_7": {
+        "activity": 0.78,
+        "pattern_density": 0.72,
+        "resonance_strength": 0.81
+      }
+    },
+    "feed_forward_layers": {
+      "activation_patterns": "non-linear clustering detected",
+      "gating_behavior": "selective amplification observed"
+    }
+  },
+  "statistical_summary": {
+    "mean_activation": 0.567,
+    "std_deviation": 0.234,
+    "skewness": 0.123,
+    "kurtosis": 2.89,
+    "entropy": 4.72
+  }
+}
