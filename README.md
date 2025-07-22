@@ -176,29 +176,6 @@ python integrated_pipeline_demo.py
 
 View sample outputs in `examples/sample_outputs/` to understand what the analysis produces.
 
-## 🔗 Part of the AI Architecture Research Suite
-
-This analyzer works with:
-1. **[TIDE-analysis](https://github.com/HillaryDanan/TIDE-analysis)** - Automated data collection & dimensional analysis
-2. **[TIDE-Resonance](https://github.com/HillaryDanan/TIDE-resonance)** - Central research platform & demos
-3. **[14+ Specialized Tools](https://github.com/HillaryDanan)** - Each measuring different aspects
-
-Together, they form a complete empirical framework for understanding AI cognitive architectures.
-
-## 📚 Scientific Foundation
-
-Based on:
-- PhD dissertation: "Neural Representation of Abstract Concepts" (Levinson, 2021)
-- 60+ fMRI sessions mapping human cognitive patterns
-- 14 semantic dimensions validated in neuroscience research
-- Novel application to AI architecture analysis
-
-## 💭 Philosophy
-
-> "We measure what we can, acknowledge what we can't, and remain curious about the rest."
-
-This framework represents a systematic approach to understanding AI cognition through empirical measurement, not speculation.
-
 ## 🌐 Part of the AI Architecture Research Suite
 
 This tool is part of a comprehensive empirical framework for analyzing AI cognitive architectures through measurable patterns.
